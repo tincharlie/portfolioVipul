@@ -1,0 +1,7 @@
+Flask~=2.0.2
+gunicorn>=19.9.0
+itsdangerous>=1.1.0
+pandas
+scikit-learn
+MarkupSafe>=1.1.1
+Werkzeug>=0.15.5

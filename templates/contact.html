@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section class="header" >
+		<nav >
+			<a href="{{ url_for('index') }}"> <img src="static/pics/user1.jpg" class="logo"></a>
+			<div class="nav-links" id="navLinks">
+			   <i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul class="unorder-col">
+					<li><a href="{{ url_for('index') }}">HOME</a></li>
+					<li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+					<li><a href="{{ url_for('projects') }}">PROJECTS</a></li>
+				</ul>
+			</div>
+		   <i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+
+<div class="text-box">
+<h1>Contact</h1>
+</div>
+	</section>
+
+<!-------Contact us--------->
+<section class="location">
+
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d946093.5446993982!2d78.26693846958337!3d22.138252991292365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd56891cd199601%3A0x4619fc29e40a760!2sChhindwara%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1622125370347!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	
+
+</section>
+
+
+<section class="contact-us">
+	<div class="row">
+		<div class="contact-col">
+			<div>
+				<i class="fa fa-home"> </i>
+				<span>
+					<h5>Ward no.3, Near Post office, Chourai, Chhindwara, M.P.</h5>
+				</span>
+			</div>
+			<div>
+				<i class="fa fa-phone"></i>
+				<span>
+					<h5>+918827737370</h5>
+					
+				</span>
+			</div>
+			<div>
+				<i class="fa fa-envelope-o"> </i>
+				<span>
+					<h5>vipulshukla999@gmail.com</h5>
+				</span>
+			</div>
+			<div>
+				<i class="fa fa-linkedin-square"></i>
+				<span>
+					<a href="https://linkedin.com/in/vipul-shukla-143b7918b" target="blank">
+						<h5>LinkedIn Profile</h5>
+					</a>
+				</span>
+			</div>
+			<div>
+				<i class="fa fa-github"></i>
+				<span>
+					<a href="https://github.com/tincharlie/tincharlie" target="blank">
+						<h5>Github Profile</h5>
+					</a>
+				</span>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+<section class="footer">
+	<div  class="content">
+		<h4>ABOUT ME</h4>
+			<p>Data Scientist, Developer, Machine Learning, Data Analytics etc.</p> 
+	</div>
+<div class="icons">
+	<i class="fa fa-linkedin-square"></i>
+	<i class="fa fa-twitter"></i>
+	<i class="fa fa-github"></i>
+</div>
+<p> Thanks To <i class="fa fa-code"></i> Come here</p>
+</section>
+
+
+
+
+
+<!------JavaScript for Toggle Menu--------->
+<script >
+	var navLinks=document.getElemenytById("navLinks");
+	
+
+	function showMenu() {
+		navLinks.stylesheet.right = "0";
+	}
+
+	function hideMenu() {
+		navLinks.stylesheet.right = "-200px";
+
+	}
+</script>
+
+</body>
+</html>

@@ -4,6 +4,7 @@
 <head>
 	<meta name="viewport" content="with=device-width, initial-scale=1.0">
 	<title>Portfolio</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="static/style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
@@ -31,6 +32,7 @@
 		</section>
 
 <!-------course-------->
+
 <section class="course">
 	<h1>Work Experience and Course</h1>
 <div class="row">
@@ -84,6 +86,7 @@
 </section>
 
       <!--------Projects--------->
+<!--------Projects--------->
 <section class="projects">
 	<h1> Projects</h1>
 
@@ -103,7 +106,7 @@
 				•	Created all the movie tags which were converted by using vectorizer. <br>
 				•	Created corpus by merging all columns as a dictionary.<br>
 				•	Movie to movie distance was found through cosine distance for related movies.<br>
-				•	Built a function that gave best result and made a prediction to similar ones. 
+				•	Built a function that gave best result and made a prediction to similar ones.
 				</p>
 	 	</div>
 	 <div class="projects-col">
@@ -134,14 +137,15 @@
 				•	On K-means cluster, preprocessed columns on every word were passed to make clusters of news.<br>
 				•	Used NMF Non Negative matrix factorization for two matrices.<br>
 				•	At the end, the result created clusters in form of tagging of news topics.<br>
-				</p>	 
+				</p>
 	</div>
 	</div>
 	<div class="row">
 		<div class="projects-col">
 			<img src="static/pics/50start.jpg">
 <!--			<a href="https://normal-startup.herokuapp.com/" target="_blank" style="color:black">-->
-			<a href="/proj" target="_blank" style="color:black">
+			<a href="/50Startup" target="_blank" style="color:black">
+
 				<h3>50 Startup Analysis </h3>
 			</a>
 			<p>
@@ -182,7 +186,7 @@
 	<p>
 		•	Finding Indian FIFA team players with different kinds of quality.<br>
 		•	Analysis of all clubs, names, jersey number, contract, and position of top player with overall performance.<br>
-		•	On the basis of any columns, used describe to know mean, count, min-max values in the dataset in each column.<br> 
+		•	On the basis of any columns, used describe to know mean, count, min-max values in the dataset in each column.<br>
 		•	Find all the missing values which can be replaced without affecting the dataset.<br>
 		•	Applied mean, median and mode for replacing Nan values in the curved, volleys, skill moves and columns.<br>
 		•	Created functions for defending, general, shooting etc. for finding overall mean.<br>
@@ -190,28 +194,28 @@
 		•	Identified youngest and eldest players in FIFA team players. <br>
 		•	Converted categorical variables into dummy variables.<br>
 		•	Used Bar, Pie, Line, Distribution etc. plots for Data Visualization.
-		
+
 		</p>
 	</div>
-	<div class="projects-col">
-	<img src="static/pics/fifaeda.jpg">
-	<a href="/bostproj" target="_blank" style="color:black">
-		<h3>Boston House Price Prediction</h3>
-	</a>
-	<p>
-		•	Here I found all the best predictor.<br>
-		•	After doing all the analysis of features.<br>
-		•	Just around 7 features I got successfully that we can use it for prediction.<br>
-		•	Replaced lots of null values are present in the best cols.<br>
-		•	Median maen and mode used to replace the respective values of catergories.<br>
-		•	Convert the categorical to continous values.<br>
-		•	So all the values must in the standardized or normalized way.<br>
-		•	Used standard scaler to come the values in some sort of same range.
-	</p>
+		</div>
+<div class="row">
+		<div class="projects-col">
+		<img src="static/pics/bostonprice.jpg">
+		<a href="/bostproj" target="_blank" style="color:black">
+			<h3>Boston House Price Prediction</h3>
+		</a>
+		<p>
+			•	Here I found all the best predictor.<br>
+			•	After doing all the analysis of features.<br>
+			•	Just around 7 features I got successfully that we can use it for prediction.<br>
+			•	Replaced lots of null values are present in the best cols.<br>
+			•	Median maen and mode used to replace the respective values of catergories.<br>
+			•	Convert the categorical to continous values.<br>
+			•	So all the values must in the standardized or normalized way.<br>
+			•	Used standard scaler to come the values in some sort of same range.
+		</p>
+		</div>
 	</div>
-	</div>	
-
-
 </section>
 
 
@@ -284,7 +288,213 @@
 	
 
 
+<!-- Your existing content -->
 
+<!-- Your existing content -->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+
+    // Text-to-Speech
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            // Adjust voice settings if needed
+            // utterance.voice = synth.getVoices()[0];
+
+            synth.speak(utterance);
+        }
+    }
+
+    // Speech Recognition
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+        const recognition = new webkitSpeechRecognition();
+
+        recognition.lang = 'en-US';
+        recognition.continuous = false;
+
+        recognition.onresult = function (event) {
+            const transcript = event.results[0][0].transcript;
+            console.log('You said: ', transcript);
+
+            // Process the transcript and trigger actions
+            if (transcript.toLowerCase().includes('home')) {
+                window.location.href = "{{ url_for('index') }}";
+            } else if (transcript.toLowerCase().includes('contact')) {
+                window.location.href = "{{ url_for('contact') }}";
+            } else if (transcript.toLowerCase().includes('projects')) {
+                window.location.href = "{{ url_for('projects') }}";
+            } else if (transcript.toLowerCase().includes('open projects')) {
+                // If the user says "open projects," navigate to the projects section
+                window.location.href = "{{ url_for('projects') }}";
+            }else if (transcript.includes('movie recommender')) {
+				window.location.href = "https://github.com/tincharlie/Movie_Clustering";
+			} else if (transcript.includes('credibility for loan')) {
+				window.location.href = "https://github.com/tincharlie/loan_eligibility_prediction";
+			} else if (transcript.includes('news clustering')) {
+				window.location.href = "https://github.com/tincharlie/News_recommendation";
+			}
+			else {
+                // If the command is not recognized, provide feedback to the user
+                const randomResponse = [
+					"I'm sorry, I didn't understand that command. Can you please repeat?",
+					"I'm not sure what you're asking. Could you try again?",
+					"I didn't catch that. Can you say it one more time?",
+					"I'm here to help, but I didn't get that. Could you repeat the command?"
+				];
+				speak(randomResponse[Math.floor(Math.random() * randomResponse.length)]);
+            }
+        };
+
+		recognition.onerror = function (event) {
+			console.error('Speech recognition error:', event.error);
+		};
+
+		recognition.onend = function () {
+			speak(greetings[Math.floor(Math.random() * greetings.length)]);
+		};
+
+        // recognition.onend = function () {
+        //     // After speech recognition ends, greet the user
+        //     speak("Welcome! How can I assist you today?");
+        // };
+
+        recognition.start();
+    } else {
+        console.error('Speech recognition not supported in this browser.');
+    }
+
+    // Greet the user when the page loads
+    window.onload = function () {
+        speak("Welcome! How can I assist you today?");
+    };
+</script>
+<!-- 
+Floating button for voice commands
+<div class="voice-button" onclick="startVoiceRecognition()">
+	<i class="fa fa-microphone"></i>
+</div>
+
+<script>
+	var navLinks = document.getElementById("navLinks");
+
+	function showMenu() {
+		navLinks.style.right = "0";
+	}
+
+	function hideMenu() {
+		navLinks.style.right = "-200px";
+	}
+
+	// Text-to-Speech
+	function speak(text) {
+		if ('speechSynthesis' in window) {
+			const synth = window.speechSynthesis;
+			const utterance = new SpeechSynthesisUtterance(text);
+
+			// Adjust voice settings if needed
+			// utterance.voice = synth.getVoices()[0];
+
+			synth.speak(utterance);
+		}
+	}
+
+	// Generate random greetings
+	const greetings = [
+		"Hello! How can I assist you today?",
+		"Greetings! What can I do for you?",
+		"Welcome! How may I help you?",
+		"Hi there! How can I be of service?"
+	];
+
+	// Speech Recognition
+	if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+		const recognition = new webkitSpeechRecognition();
+
+		recognition.lang = 'en-US';
+		recognition.continuous = false;
+
+		recognition.onresult = function (event) {
+			const transcript = event.results[0][0].transcript.toLowerCase();
+			console.log('You said: ', transcript);
+
+			// Process the transcript and trigger actions
+			if (transcript.includes('home')) {
+				window.location.href = "{{ url_for('index') }}";
+			} else if (transcript.includes('contact')) {
+				window.location.href = "{{ url_for('contact') }}";
+			} else if (transcript.includes('projects')) {
+				window.location.href = "{{ url_for('projects') }}";
+			} else if (transcript.includes('open projects')) {
+				window.location.href = "{{ url_for('projects') }}";
+			} else if (transcript.includes('movie recommender')) {
+				window.location.href = "https://github.com/tincharlie/Movie_Clustering";
+			} else if (transcript.includes('credibility for loan')) {
+				window.location.href = "https://github.com/tincharlie/loan_eligibility_prediction";
+			} else if (transcript.includes('news clustering')) {
+				window.location.href = "https://github.com/tincharlie/News_recommendation";
+			} else {
+				const randomResponse = [
+					"I'm sorry, I didn't understand that command. Can you please repeat?",
+					"I'm not sure what you're asking. Could you try again?",
+					"I didn't catch that. Can you say it one more time?",
+					"I'm here to help, but I didn't get that. Could you repeat the command?"
+				];
+				speak(randomResponse[Math.floor(Math.random() * randomResponse.length)]);
+			}
+		};
+
+		recognition.onerror = function (event) {
+			console.error('Speech recognition error:', event.error);
+		};
+
+		recognition.onend = function () {
+			speak(greetings[Math.floor(Math.random() * greetings.length)]);
+		};
+
+		// Greet the user with a random greeting when the page loads
+		window.onload = function () {
+			speak(greetings[Math.floor(Math.random() * greetings.length)]);
+		};
+	} else {
+		console.error('Speech recognition not supported in this browser.');
+	}
+
+	function startVoiceRecognition() {
+		recognition.start();
+	}
+</script>
+
+<style>
+	/* Floating button styles */
+	.voice-button {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		background-color: #3498db;
+		color: #fff;
+		border: none;
+		border-radius: 50%;
+		padding: 15px;
+		font-size: 24px;
+		cursor: pointer;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.voice-button:hover {
+		background-color: #2980b9;
+	}
+</style> -->
 
 <!------JavaScript for Toggle Menu--------->
 <script >

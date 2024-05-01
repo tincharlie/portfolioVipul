@@ -1,0 +1,38 @@
+<!-- header.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="{{ url_for('index') }}"><img src="static/pics/user1.jpg" class="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul class="unorder-col">
+                    <li><a href="{{ url_for('index') }}">HOME</a></li>
+                    <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+                    <li><a href="{{ url_for('projects') }}">PROJECTS</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="toggleMenu()"></i>
+        </nav>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function toggleMenu() {
+            $("#navLinks").toggle();
+        }
+    </script>
+</body>
+</html>

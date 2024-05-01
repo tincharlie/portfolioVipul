@@ -641,3 +641,19 @@ background: #f0f0f0;
 	
 
 }
+
+/* .center-form {
+    margin: 0 auto; /* Set left and right margins to "auto" */
+    width: 60%; /* Adjust the width as needed */
+    text-align: center; /* Center the content inside the form */
+} */
+
+
+.center-section {
+    text-align: center; /* Center the content inside the section */
+}
+
+/* Optional: Center the form within the section */
+.center-form {
+    display: inline-block; /* Make the form inline-block to center it */
+}

@@ -1,17 +1,50 @@
-<html>
-<head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
-	<title>Prediction</title>
-    <link rel="stylesheet" type="text/css" href="static/new.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com"></head>
-<body class="body">
-<h1>Predict profit on the basis of RND and MKT</h1>
-<form action="/proj1pred" method="POST">
-<h2><label for="RND">Amount Spent in RND</label>
-<input type="text" id="RND" name="RND">btw:[0-300000]</h2><br>
-<h2><label for="MKT">Amount Spent in MKT </label>
-<input type="text" id="MKT" name="MKT">btw:[0-200000]</h2><br>
-<input style="color: green; marginleft : 10%" type="submit" value="Submit" >
-</form>
-</body>
-</html>
+{% include 'header.html' %}
+
+        <div class="text-box">
+            <h1>50-Startups Project</h1>
+        </div>
+    </section>
+    <section class="course center-section">
+        <h1>Predict profit on the basis of RND and MKT</h1>
+        
+        
+            <!-- Display form if pred is not defined -->
+            <div class="course-col">
+                <form action="/proj" method="POST" class="center-form">
+                    <h2><label for="RND">Amount Spent in RND</label>
+                        <input type="text" id="RND" name="RND" placeholder="0-300000" required></h2><br>
+                    <h2><label for="MKT">Amount Spent in MKT </label>
+                        <input type="text" id="MKT" name="MKT" placeholder="0-200000" required></h2><br>
+                    <input style="color: green;" type="submit" value="Submit">
+                </form>
+            </div>
+            {% if pred is defined %}
+            <!-- Display result if pred is defined -->
+            <div class="course-col">
+                <div>
+                    <h1 style="text-align: center; color: #21b749;">Predicted profit on the basis of RND and MKT</h1><br>
+                    <h1 style="text-align: center; color: #21b749;">{{ pred }} </h1><br>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+    
+        
+
+
+{% include 'footer.html' %}
+
+<!-- <section class="course">
+    <h1>Predict profit on the basis of RND and MKT</h1>
+    <div class = "row">
+        <div class = "course-col">
+            <form action="/proj1pred" method="POST">
+            <h2><label for="RND">Amount Spent in RND</label>
+            <input type="text" id="RND" name="RND">btw:[0-300000]</h2><br>
+            <h2><label for="MKT">Amount Spent in MKT </label>
+            <input type="text" id="MKT" name="MKT">btw:[0-200000]</h2><br>
+            <input style="color: green; marginleft : 10%" type="submit" value="Submit" >
+            </form>
+        </div>
+    </div>
+</section> -->

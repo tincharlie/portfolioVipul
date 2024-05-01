@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+<div class="text-box">
+    <h1>50-Startups Project</h1><br>
+    <h2>Predict profit on the basis of RND and MKT</h2>
+</div>
+</section>
+<section class="course center-section">
+
+    {% if pred == 'Please Pass the input...' %}
+        <!-- Display form if pred is not defined -->
+        <div class="course-col">
+            <form action="/50Startup" method="POST" class="center-form">
+                <h2><label for="RND">Amount Spent in RND</label>
+                    <input type="text" id="RND" name="RND" placeholder="0-300000" required></h2><br>
+                <h2><label for="MKT">Amount Spent in MKT </label>
+                    <input type="text" id="MKT" name="MKT" placeholder="0-200000" required></h2><br>
+                <input style="color: green;" type="submit" value="Submit">
+            </form>
+        </div>
+    {% else %}
+        <!-- Display result if pred is defined -->
+        <div class="course-col">
+            <div>
+                <h1 style="text-align: center; color: #21b749;">Predicted Profit</h1><br>
+                <h1 style="text-align: center; color: #21b749;">{{ pred }} </h1><br>
+            </div>
+            <!-- Add back button here -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/50Startup">Back</a>
+            </div>
+        </div>
+        
+    {% endif %}
+</section>
+
+    
+
+{% include 'footer.html' %}

@@ -1,0 +1,72 @@
+{% include 'header.html' %}
+
+<div class="text-box">
+    <h1>Boston-House-Price Project</h1><br>
+    <h2>Predicting profit on the basis of following:
+    <ul style="align-items: center;">
+        LSTAT,
+        RM,
+        AGE,
+        CRIM,
+        B,
+        DIS,
+    </ul></h2>
+</div>
+</section>
+
+<section class="course">
+    {% if predi == 'Please Pass the input...' %}
+        <div class = "course-col">
+        <h1 style="text-align: center; color: green;">Predict The Price</h1>
+            <div style="text-align: center; color: greenyellow;">
+            <!-- <form action="/bost2predict" method="POST"> -->
+                <form action="/BostonHousePrice" method="POST">
+                <h2><label>LSTAT: % lower status of the population: </label>
+                    <input type="text" id="LSTAT" name="LSTAT" placeholder="1.73 - 37.97" required></h2>
+                <br>
+                <h2><label>RM: average number of rooms per dwelling: </label>
+                    <input type="text" id="RM" name="RM" placeholder="3.561 - 8.78" required></h2>
+                <br>
+                <h2><label>AGE: proportion of owner-occupied units built prior to 1946: </label>
+                    <input type="text" id="AGE" name="AGE" placeholder="2.9 - 100.0" required></h2>
+                <br>
+                <h2><label>Crime rate as per capita: </label>
+                    <input type="text" id="CRIM" name="CRIM" placeholder="0.00632 - 88.9762" required></h2>
+                <br>
+                <h2><label>B: 1000(Bk−0.63)² where Bk is the proportion of blacks by town: </label>
+                    <input type="text" id="B" name="B" placeholder="0.32 - 396.9" required></h2>
+                <br>
+                <h2><label>DIS: weighted distances to ﬁve Boston employment centers: </label>
+                    <input type="text" id="DIS" name="DIS" placeholder="1.1296 - 12.1265" required></h2>
+                <br>
+            
+                <br>
+                <input style="color: green;" type="submit" value="Submit">
+                <br>
+            </form>
+            
+            </div>
+        </div>
+    {% else %}
+        <div  class="course-col">
+        <!-- <div  class="course-col" style="background-color:#EE9413;"> -->
+
+        <div align="center">
+            <h1>As per your requirement House Price is <br> {{ predi }} Lakh</h1>
+            <br>
+            <br>
+            <a href="/BostonHousePrice">Back</a>
+            <br>
+            <br>
+            <a href="https://www.linkedin.com/in/vipul-shukla-143b7918b/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:38px;color:blue"></i></a>
+            &nbsp; &nbsp; <a href="https://github.com/tincharlie/" target="_blank"><i class="fa fa-github" style="font-size:36px"></i></a>
+        </div>
+        
+        </div>
+    {% endif %}
+
+<!-- </body>
+</html> -->
+</section>
+
+{% include 'footer.html' %}
